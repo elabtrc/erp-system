@@ -1,0 +1,553 @@
+.hr-container {
+  display: flex;
+  background: #ffffff59;
+  width: 100%;  /* Takes full width of the parent container */
+  height: 100vh; /* Takes full height of the viewport (adjust as needed) */
+  box-sizing: border-box; /* Ensures padding and borders are included in the width/height calculation */
+}
+
+  
+  .hr-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #a0a0a059;
+    margin-left: 245px;
+  }
+  
+.hr-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa; /* Light gray background */
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add space below the header */
+}
+  
+  .hr-header h1 {
+    margin: 0;
+    font-size: 30px;
+  }
+  
+  .hr-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+    background: #ddd;
+    border-radius: 50%;
+  }
+  
+  .recent-applicants, .recent-jobs {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.recent-applicants h2, .recent-jobs h2 {
+    margin-bottom: 15px;
+}
+
+.applicants-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.applicant-card {
+    width: 22%;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.applicant-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.view-detail-btn {
+    background: white;
+    border: 1px solid #007bff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.recent-jobs-header {
+  display: flex;
+  justify-content: space-between; /* Space between the items */
+  align-items: center; /* Vertically center the items */
+}
+
+.recent-jobs table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-jobs th, .recent-jobs td {
+    padding: 10px;
+    text-align: left;
+}
+
+.recent-jobs th {
+    background: #f8f9fa;
+}
+
+.recent-jobs .applicants {
+    display: flex;
+    align-items: center;
+}
+
+.avatars {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.applicant-count {
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.status.active {
+    background: #d4f8d4;
+    color: green;
+}
+
+.status.expired {
+    background: #f8d4d4;
+    color: red;
+}
+
+.actions button {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  width: 750px;
+  max-height: 90vh; /* Make the modal height flexible */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Make the form content scrollable */
+form {
+  max-height: 75vh; /* Limit the form's height */
+  overflow-y: auto; /* Enable scrolling for the form */
+  padding-right: 35px; /* Add padding on the right side to prevent content from being cut off */
+}
+
+/* Form groups and other styles remain the same */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-employee-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+  display: flex;
+  align-items: right;
+}
+
+.add-employee-btn:hover {
+  background-color: #0056b3;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Branch Dropdown Container */
+.branch-dropdown {
+  position: relative;
+  width: 200px;
+  margin: 10px 10px 10px 20px; /* Top, Right (space to search-bar), Bottom, Left */
+}
+
+
+.branch-dropdown select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Style when the dropdown is focused */
+.branch-dropdown select:focus {
+  border-color: #007bff; /* Change to your desired focus color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Option styles */
+.branch-dropdown option {
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* Optional: Add hover effect for options */
+.branch-dropdown select:hover {
+  border-color: #007bff; /* Change to your desired hover color */
+}
+
+/* Optional: Style for the dropdown when it's active */
+.branch-dropdown select:active {
+  background-color: #f8f8f8;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  padding: 8px 15px;
+  border-radius: 30px;
+  margin-left: 350px; /* Adjust this for the desired position */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  transition: all 0.3s ease;
+}
+
+.search-bar:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding-left: 12px;
+  font-size: 16px;
+  width: 200px; /* Adjust for input width */
+  transition: width 0.3s ease; /* Smooth transition for expanding input */
+}
+
+.search-bar input:focus {
+  width: 250px; /* Expand the input field on focus */
+}
+
+.search-icon {
+  color: #6c757d;
+  margin-right: 10px;
+  font-size: 18px; /* Adjust icon size */
+  transition: color 0.3s ease;
+}
+
+.search-bar input:focus + .search-icon {
+  color: #007bff; /* Change icon color on input focus */
+}
+
+.month-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.month-picker input[type="month"] {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+table input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.save-expense-btn {
+  margin-top: 20px;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.save-expense-btn:hover {
+  background-color: #45a049;
+}
+
+
+/* Responsive adjustments for mobile and tablets */
+@media (max-width: 768px) {
+  .hr-container {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    height: auto; /* Let the height adjust based on content */
+  }
+
+  .hr-content {
+    margin-left: 0; /* Remove the left margin on smaller screens */
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .hr-header h1 {
+    font-size: 24px; /* Reduce font size for smaller screens */
+  }
+
+  .hr-icons {
+    flex-direction: column; /* Stack icons vertically for better space */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .recent-applicants, .recent-jobs {
+    padding: 15px; /* Adjust padding */
+  }
+
+  .applicant-card {
+    width: 100%; /* Make applicant cards full width on smaller screens */
+    margin-bottom: 10px; /* Add space between cards */
+  }
+
+  .recent-jobs table {
+    font-size: 14px; /* Reduce font size for better readability on smaller screens */
+  }
+
+  .search-bar {
+    margin-left: 20px; /* Adjust position */
+    width: 100%; /* Make the search bar full width */
+  }
+
+  .branch-dropdown {
+    width: 100%; /* Make the dropdown full width */
+    margin: 10px 0; /* Adjust margins for spacing */
+  }
+
+  .modal-content {
+    width: 90%; /* Make modal content take up more space */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .search-bar input {
+    width: 100%; /* Make input field full width */
+  }
+
+  .search-icon {
+    font-size: 22px; /* Adjust icon size */
+  }
+}
+
+@media (max-width: 480px) {
+  .hr-container {
+    padding: 10px; /* Add some padding around the container */
+  }
+
+  .search-bar input {
+    width: 100%; /* Make the search input take full width */
+  }
+
+  .hr-header {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: flex-start; /* Align header content to the left */
+  }
+
+  .hr-content {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .applicant-card {
+    width: 100%; /* Make cards full width on very small screens */
+    margin-bottom: 15px; /* Add space between cards */
+  }
+
+  .search-bar {
+    margin-left: 0; /* Reset left margin */
+    width: 100%; /* Make the search bar full width */
+  }
+}
+
+/* Styling the recurring expenses tab */
+.recurring-expenses-tab {
+  margin-top: 30px;
+}
+
+.recurring-expenses-tab-header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.expense-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.expense-table th, .expense-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.expense-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.expense-table td input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* Button styling */
+.expense-buttons {
+  margin-top: 20px;
+}
+
+.save-expense-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tab-navigation button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f4f6f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-navigation button.active {
+  background-color: #f26f81;
+  color: #fff;
+}
+
+.tab-navigation button:hover {
+  background-color: #e2e6ea;
+}
+
+/* Styling for the Content inside Each Tab */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .month-picker {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .expense-table td, .expense-table th {
+    font-size: 12px;
+  }
+
+  .save-expense-btn {
+    width: 100%;
+  }
+}

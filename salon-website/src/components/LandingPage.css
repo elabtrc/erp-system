@@ -1,0 +1,396 @@
+/* Landing Page Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+}
+
+/* Ensure no space above navbar */
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 100px; /* Increase side padding */
+    background-color: #141414;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.hero-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #141414;
+    justify-content: center;
+    padding-top: 150px; /* Push content down below navbar */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents overflow on the right side */
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px; /* Match brand name size */
+    font-family: 'Poppins', sans-serif; /* Change to your preferred font */
+    font-weight: bold; /* Make it match branding */
+}
+
+.nav-links li a:hover {
+    color: #f26f81;
+}
+
+/* Hero Section */
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 50px 20px;
+    gap: 150px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.book-now {
+    background-color: #f26f81;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero-image .image {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* About Section */
+.about-section {
+    width: 100%;
+    padding: 50px 5%; /* Adjusted from 10% to 5% to remove excess space */
+    background-color: #f8f8f8;
+    text-align: center;
+    color: black;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevents overflow on the right side */
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-right: 50px; /* Adjust this value for fine-tuning */
+    padding: 50px;
+}
+
+.about-img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+}
+
+.about-img:hover {
+    transform: scale(0.9); /* Zoom out effect */
+}
+
+.about-content p {
+    max-width: 600px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    margin-right: 30px; /* Removes any default margin */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 0 white, 1px -1px 0 white;
+    transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #383737;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none;
+    min-width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1000;
+}
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown-menu li a:hover {
+    color:#f26f81;
+}
+
+.dropdown:hover .dropdown-icon {
+    transform: rotate(180deg); /* Rotates the icon 180 degrees */
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Our Services Section */
+.our-services-section {
+    width: 100%;
+    padding: 50px 10%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* Container that holds both sides */
+.services-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Left side (black background) */
+.services-left {
+    flex: 1;
+    padding: 20px;
+    background-color: #141414;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Right side (pink background) */
+.services-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #f26f81; /* Pink background */
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Contact Us Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 10%;
+    background-color: #fff;  /* Ensure the entire section is white */
+    color: black;
+    width: 100vw; /* Full width of viewport */
+    box-sizing: border-box;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Contact text on the left */
+.contact-text {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-text h2 {
+    font-size: 45px; /* from 36px */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    font-size: 20px; /* from 16px */
+    margin-bottom: 25px;
+}
+
+.socials-image {
+    display: flex;
+    justify-content: start; /* Align left */
+    gap: 10px;
+}
+
+.contact-img {
+    width: 45px;  /* from 30px */
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 50px;
+}
+
+.contact-img:hover {
+    transform: scale(1.1);
+}
+
+/* Contact form on the right */
+.contact-form {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form * {
+    box-sizing: border-box;
+}
+
+.contact-form .submit-button {
+    margin-top: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-button {
+    background-color: #f26f81;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #d9536e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-text {
+        max-width: 100%;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+}
+
+/* Footer Section */
+.footer-section {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #141414;
+    color: #fff;
+}
+
+.footer-section p {
+    font-weight: bold; /* Make the text bold */
+    font-size: 16px; /* You can adjust the size if needed */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+

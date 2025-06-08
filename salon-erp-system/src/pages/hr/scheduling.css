@@ -1,0 +1,36 @@
+/* Add to users.css */
+.time-inputs {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .time-inputs > div {
+    flex: 1;
+  }
+  
+  .status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .status-badge.scheduled {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .status-badge.confirmed {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status-badge.cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .status-badge.completed {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }

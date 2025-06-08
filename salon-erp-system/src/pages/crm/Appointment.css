@@ -1,0 +1,702 @@
+/* Appointment.css - Enhanced Version */
+
+/* Base Structure */
+.appointment-container {
+  display: flex;
+  min-height: 100vh;
+  background: #d3d3d379;
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+}
+
+.appointment-content {
+  flex-grow: 1;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Header Styles */
+.appointment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Button Styles */
+.add-appointment-button,
+.refresh-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background: #f26f81;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.add-appointment-button:hover,
+.refresh-button:hover {
+  background: #b55461;
+}
+
+.refresh-button {
+  background: #6c757d;
+}
+
+.refresh-button:hover {
+  background: #5a6268;
+}
+
+/* Calendar Styles */
+.calendar-container {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: 70vh;
+}
+
+.rbc-toolbar {
+  margin-bottom: 15px;
+}
+
+.rbc-toolbar button {
+  color: #495057;
+  border: 1px solid #dee2e6;
+  background: white;
+  padding: 5px 10px;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #f8f9fa;
+}
+
+.rbc-toolbar button.rbc-active {
+  background-color: #e9ecef;
+  color: #212529;
+  box-shadow: none;
+}
+
+.rbc-event {
+  background-color: #f26f81 !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 500;
+  padding: 2px 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rbc-event-content {
+  font-size: 0.9rem;
+}
+
+/* Appointments List */
+.appointments-list-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.appointments-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.appointment-card {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  transition: all 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #212529;
+  font-size: 1.1rem;
+}
+
+.status-badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-badge.booked {
+  background-color: #f26f81;
+  color: white;
+}
+
+.status-badge.confirmed {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.status-badge.completed {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-badge.cancelled {
+  background-color: #dc3545;
+  color: white;
+}
+
+.appointment-detail {
+  display: flex;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #6c757d;
+  min-width: 80px;
+}
+
+.detail-value {
+  color: #495057;
+}
+
+.card-footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.view-btn {
+  background-color: #f26f81;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.view-btn:hover {
+  background-color: #b55461;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: #212529;
+  font-size: 1.5rem;
+}
+
+/* Form Styles */
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #495057;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn, .submit-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cancel-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}
+
+.submit-btn {
+  background-color: #f26f81;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #b55461;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.action-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  flex: 1;
+  min-width: 120px;
+}
+
+.action-buttons .success {
+  background-color: #28a745;
+  color: white;
+}
+
+.action-buttons .success:hover {
+  background-color: #218838;
+}
+
+.action-buttons .danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.action-buttons .danger:hover {
+  background-color: #c82333;
+}
+
+.action-buttons .primary {
+  background-color: #f26f81;
+  color: white;
+}
+
+.action-buttons .primary:hover {
+  background-color: #b55461;
+}
+
+.action-buttons .close-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.action-buttons .close-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .appointment-container {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .appointments-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons button {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .appointment-content {
+    padding: 15px;
+  }
+  
+  .modal {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn, .submit-btn {
+    width: 100%;
+  }
+}
+
+/* Add to your Appointment.css */
+.rbc-off-range {
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+.rbc-time-content {
+  overflow-y: auto;
+}
+
+.rbc-time-header {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.rbc-time-gutter {
+  white-space: nowrap;
+}
+
+.rbc-time-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.rbc-time-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.rbc-time-header {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+/* Add these styles to ensure calendar displays properly */
+.rbc-calendar {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.rbc-event {
+  white-space: normal !important;
+  padding: 2px 5px !important;
+  font-size: 0.8rem !important;
+}
+
+.rbc-time-view {
+  border-left: none;
+  border-right: none;
+}
+
+.rbc-time-header {
+  display: flex !important;
+  flex: 0 0 auto !important;
+}
+
+.rbc-time-content {
+  overflow-y: auto !important;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}/* Modern Button Styles */
+.modern-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  gap: 0.5rem;
+}
+
+.modern-button.primary {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.modern-button.primary:hover {
+  background-color: #4338ca;
+}
+
+.modern-button.secondary {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.modern-button.secondary:hover {
+  background-color: #e5e7eb;
+}
+
+.modern-button.small {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+}
+
+/* Modern Error Message */
+.modern-error-message {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Modern Select Dropdown */
+.modern-select {
+  appearance: none;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.modern-select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.select-wrapper {
+  position: relative;
+  width: 200px;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6b7280;
+}
+
+/* Modern Branch Filter */
+.modern-branch-filter {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-container label {
+  font-weight: 500;
+  color: #374151;
+  white-space: nowrap;
+}
+
+/* Calendar Toolbar Improvements */
+.rbc-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rbc-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rbc-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #374151;
+}
+
+.rbc-btn:hover {
+  background-color: #f9fafb;
+}
+
+.rbc-btn-primary {
+  background-color: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+}
+
+.rbc-btn-primary:hover {
+  background-color: #4338ca;
+  border-color: #4338ca;
+}
+
+.rbc-active {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border-color: #c7d2fe;
+}
+
+.view-toggle-group {
+  margin-left: auto;
+}

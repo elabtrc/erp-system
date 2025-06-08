@@ -1,0 +1,39 @@
+/* Calendar.css */
+.rbc-calendar {
+  min-height: 600px;
+}
+
+.rbc-time-view {
+  min-height: 400px;
+}
+
+.rbc-today {
+  background-color: #eaf6ff;
+}
+
+.rbc-event {
+  background-color: #3174ad;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+.rbc-event-content {
+  white-space: normal !important;
+}
+
+.rbc-time-header {
+  overflow: hidden !important;
+}
+
+.rbc-header {
+  padding: 10px 3px;
+  font-weight: bold;
+}
+
+.rbc-time-gutter {
+  font-size: 12px;
+}
+
+.rbc-time-content {
+  min-height: 120px;
+}

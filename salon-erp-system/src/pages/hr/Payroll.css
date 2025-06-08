@@ -1,0 +1,367 @@
+.payroll-container {
+    display: flex;
+    background: #a0a0a059;
+    width: 100%;  /* Takes full width of the parent container */
+    height: 100vh; /* Takes full height of the viewport (adjust as needed) */
+    box-sizing: border-box; /* Ensures padding and borders are included in the width/height calculation */
+  }
+  
+  .payroll-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+  
+  .payroll-header h2 {
+      font-size: 24px;
+      color: #333;
+  }
+  
+  .payroll-actions {
+      display: flex;
+      gap: 10px;
+  }
+  
+  .payroll-actions button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s ease-in-out;
+  }
+  
+  .add-payroll-btn {
+      background-color: #28a745;
+      color: white;
+  }
+  
+  .edit-payroll-btn {
+      background-color: #ffc107;
+      color: black;
+  }
+  
+  .process-payroll-btn {
+      background-color: #007bff;
+      color: white;
+  }
+  
+  .payroll-actions button:hover {
+      opacity: 0.8;
+  }
+  
+  /* Table Styling */
+  .payroll-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payroll-table th,
+  .payroll-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+  
+  .payroll-table th {
+      background-color: #343a40;
+      color: white;
+  }
+  
+  .payroll-table tr:hover {
+      background-color: #f1f1f1;
+  }
+  
+  /* Payroll Slip Modal */
+  .payroll-slip-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+  }
+  
+  .payroll-slip-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  
+  .payroll-slip-header h3 {
+      font-size: 20px;
+      color: #333;
+  }
+  
+  .close-btn {
+      cursor: pointer;
+      font-size: 20px;
+      color: #dc3545;
+      background: none;
+      border: none;
+  }
+  
+  .payroll-slip-content {
+      font-size: 16px;
+      color: #555;
+  }
+  
+  .payroll-slip-content p {
+      margin: 5px 0;
+  }
+  
+  .payroll-slip-footer {
+      margin-top: 15px;
+      text-align: right;
+  }
+  
+  .payroll-slip-footer button {
+      padding: 8px 14px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .payroll-slip-footer button:hover {
+      background: #0056b3;
+  }
+  
+  /* Payroll Slip Modal */
+  .payroll-slip-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+  }
+  
+  .payroll-slip-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+  }
+  
+  .payroll-slip-header h3 {
+      font-size: 20px;
+      color: #333;
+  }
+  
+  .close-btn {
+      cursor: pointer;
+      font-size: 20px;
+      color: #dc3545;
+      background: none;
+      border: none;
+  }
+  
+  /* Modal Background */
+  .payslip-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    /* Modal Content */
+    .payslip-modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      width: 60%;
+      max-width: 500px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    /* Button Styling for Close Button */
+    .payslip-modal button {
+      background-color: #008CBA; /* Blue */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .payslip-modal button:hover {
+      background-color: #007bb5; /* Darker blue on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+    
+    .payslip-modal button:active {
+      background-color: #006fa1; /* Darker blue when pressed */
+    }
+    
+    
+    .generate-payroll-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: auto 15px 10px 10px;
+    }
+    
+    .generate-payroll-container label {
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+    }
+    
+    .generate-payroll-container input,
+    .generate-payroll-container select {
+      font-size: 14px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 200px;
+    }
+    
+    .generate-payroll-container input:focus,
+    .generate-payroll-container select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+    
+    .generate-payroll-container button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .generate-payroll-container button:hover {
+      background-color: #45a049;
+    }
+    
+  /* View Payslip button styling */
+  .view-payslip-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #4CAF50; /* Green */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .view-payslip-btn:hover {
+      background-color: #45a049; /* Darker green on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+    
+    .view-payslip-btn:active {
+      background-color: #388e3c; /* Darker green when pressed */
+    }
+    
+    /* Mark as Paid button styling */
+    .mark-as-paid-btn {
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #008CBA; /* Blue */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    .mark-as-paid-btn:hover {
+      background-color: #007bb5; /* Darker blue on hover */
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+    
+    .mark-as-paid-btn:active {
+      background-color: #006fa1; /* Darker blue when pressed */
+    }
+    
+    /* Disabled button styling */
+    button:disabled {
+      background-color: #ccc; /* Gray */
+      color: #666;
+      cursor: not-allowed;
+    }
+    
+    button:disabled:hover {
+      background-color: #ccc; /* No hover effect when disabled */
+      transform: none; /* No hover scale effect when disabled */
+    }
+    
+    .no-payroll-data td {
+      text-align: center;
+      padding: 1rem;
+      font-style: italic;
+      color: #888;
+      background-color: #fafafa;
+      border: 1px solid #e0e0e0;
+      margin-left: 500px;
+    }
+  
+    .center-table th,
+    .center-table td {
+      text-align: center;
+    }
+  
+    .payslip-button-group {
+      display: flex;
+      justify-content: flex-end; /* align buttons sa right */
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .download-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .payslip-close-btn {
+      background-color: #f44336;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    
