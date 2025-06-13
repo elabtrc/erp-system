@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../db.js');
-const { generateExcel, generatePDF } = require('../../src/services/reportGenerator.js');
+const { generateExcel, generatePDF } = require('../services/reportGenerator.js');
 const { authenticateToken } = require('../middleware/authMiddleware.js');
 
 
