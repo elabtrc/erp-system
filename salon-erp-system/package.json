@@ -29,7 +29,7 @@
     "lucide-react": "^0.476.0",
     "moment": "^2.30.1",
     "papaparse": "^5.5.2",
-    "pdfkit": "^0.17.0",
+    "pdfkit": "^0.17.1",
     "pg": "^8.16.0",
     "react": "^19.0.0",
     "react-big-calendar": "^1.18.0",
