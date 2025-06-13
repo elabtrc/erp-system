@@ -15,21 +15,21 @@ const canvas = require('canvas');
 const { Canvas, Image, ImageData } = canvas;
 const sharp = require("sharp");
 const nodemailer = require('nodemailer');
-const Product = require('../models/Product');
-const productRoute = require('./productRoute');
-const Category = require('../models/Category'); // Adjust path as needed
-const stockRoutes = require('./stockRoutes');
-const appointmentRoutes = require('./appointmentRoutes');
-const restockRoutes = require('./restockRoutes');
-const transactionsRoute = require('./transactionsRoute');
-const paymentBookingRoute = require('./paymentBookingRoute');
-const customerRoutes = require('./customerRoutes');
-const feedbackRoutes = require('./feedbackRoutes');
-const userRoutes = require('./userRoutes');
-const roleRoutes = require('./roleRoutes'); // Add this line
-const permissionRoutes = require('./permissionRoutes');
+const Product = require('./models/Product');
+const productRoute = require('./routes/productRoute');
+const Category = require('./models/Category'); // Adjust path as needed
+const stockRoutes = require('./routes/stockRoutes');
+const appointmentRoutes = require('./routes/appointmentRoutes');
+const restockRoutes = require('./routes/restockRoutes');
+const transactionsRoute = require('./routes/transactionsRoute');
+const paymentBookingRoute = require('./routes/paymentBookingRoute');
+const customerRoutes = require('./routes/customerRoutes');
+const feedbackRoutes = require('./routes/feedbackRoutes');
+const userRoutes = require('./routes/userRoutes');
+const roleRoutes = require('./routes/roleRoutes'); // Add this line
+const permissionRoutes = require('./routes/permissionRoutes');
 
-const { computeWorkingDays } = require('../utils/workingDays');
+const { computeWorkingDays } = require('./utils/workingDays');
 faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
 
