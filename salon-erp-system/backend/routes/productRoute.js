@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../../backend/db'); // Make sure this is your database connection
-const Product = require('../../backend/models/Product');
+const pool = require('../db'); // Make sure this is your database connection
+const Product = require('../models/Product');
 
 
 // Get products with inventory
