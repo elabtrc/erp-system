@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const { authenticateToken } = require('../middleware/authMiddleware');
-const pool = require('../../backend/db');
+const pool = require('../db');
 const { checkAdmin } = require('../middleware/roleMiddleware');
 
 // GET all roles

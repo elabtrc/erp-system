@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../../backend/db');
+const pool = require('../db');
 
 // Get all feedbacks with optional branch filtering
 router.get('/', async (req, res) => {

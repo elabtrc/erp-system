@@ -1,7 +1,7 @@
 // routes/stockRoutes.js
 const express = require('express');
 const router = express.Router();
-const db = require('../../backend/db'); // Make sure this is your database connection
+const db = require('../db'); // Make sure this is your database connection
 
 
 // Get all stocks with product and branch details

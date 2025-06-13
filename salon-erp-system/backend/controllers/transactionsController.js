@@ -1,5 +1,5 @@
 // src/controllers/transactionsController.js
-const pool = require('../../backend/db');
+const pool = require('../db');
 
 const getAllTransactions = async (req, res) => {
   try {

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../backend/db'); // use your pg pool or client
+const db = require('../db'); // use your pg pool or client
 
 // GET all permissions
 router.get('/', async (req, res) => {

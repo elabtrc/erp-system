@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../backend/db');
+const db = require('../db');
 const { authenticateToken } = require('../middleware/authMiddleware');
 
 // GET all pending restock requests
