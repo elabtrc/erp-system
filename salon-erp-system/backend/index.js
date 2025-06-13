@@ -2,7 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const { Pool } = require('pg');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const moment = require('moment');
@@ -34,7 +34,7 @@ faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
 
 
 const app = express();
-const port = 5000;
+const PORT = process.env.PORT || 3000;
 
 // ---------------------
 // ✅ Middleware
@@ -167,7 +167,7 @@ app.post('/api/login', async (req, res) => {
     }
 
     const user = userResult.rows[0];
-    const validPassword = await bcrypt.compare(password, user.password_hash);
+    const validPassword = await bcryptjs.compare(password, user.password_hash);
     if (!validPassword) return res.status(401).json({ error: 'Invalid credentials' });
 
     const token = jwt.sign({
@@ -294,7 +294,7 @@ app.post('/api/customers/register', async (req, res) => {
 
     // Hash password
     const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const hashedPassword = await bcryptjs.hash(password, saltRounds);
 
     // Create customer
     const result = await pool.query(
@@ -351,7 +351,7 @@ app.post('/api/customers/login', async (req, res) => {
     const customer = result.rows[0];
 
     // Verify password
-    const validPassword = await bcrypt.compare(password, customer.password_hash);
+    const validPassword = await bcryptjs.compare(password, customer.password_hash);
     if (!validPassword) {
       return res.status(401).json({ 
         success: false,
@@ -1666,8 +1666,8 @@ app.use(cors());
   ])
   .then(() => {
     console.log("✅ Face-api models loaded");
-    app.listen(port, () => {
-      console.log(`Server is running on http://localhost:${port}`);
+    app.listen(PORT, () => {
+      console.log(`Server is running on ${PORT}`);
     });
   })
   .catch(err => {
@@ -1708,7 +1708,7 @@ app.use(cors());
           return res.status(400).json({ error: 'Credentials already registered for this user.' });
         }
     
-        const hashedPin = await bcrypt.hash(pin, 10);
+        const hashedPin = await bcryptjs.hash(pin, 10);
         console.log("Hashed PIN for user:", userId);
     
         await pool.query(
@@ -1772,7 +1772,7 @@ app.use(cors());
   
       const { employee_user_id, pin_hash, first_name } = result.rows[0];
   
-      const isPinValid = await bcrypt.compare(pin, pin_hash);
+      const isPinValid = await bcryptjs.compare(pin, pin_hash);
   
       if (!isPinValid) {
         return res.status(400).json({ success: false, error: "Invalid Employee ID or PIN" });
@@ -1809,7 +1809,7 @@ app.use(cors());
 
       const employee = result.rows[0];
 
-      const isPinValid = await bcrypt.compare(pin, employee.pin_hash);
+      const isPinValid = await bcryptjs.compare(pin, employee.pin_hash);
 
       if (!isPinValid) {
         return res.status(400).json({ success: false, error: "Invalid Employee ID or PIN" });
