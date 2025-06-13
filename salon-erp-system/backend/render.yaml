@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: salon-thesis
+    env: node
+    rootDir: salon-erp-system/backend
+    buildCommand: npm install
+    startCommand: node index.js
+    build:
+      envVars:
+        - key: NODE_ENV
+          value: production
+    envVars:
+      - key: PORT
+        value: 5000
+    dockerfilePath: ""
